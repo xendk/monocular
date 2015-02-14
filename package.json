@@ -1,0 +1,13 @@
+{
+  "name": "monocular.js",
+  "description": "Submit images from tests to Applitools Eyes.",
+  "version": "0.0.1",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "split2": "0.2.1",
+    "nomnom": "1.8.1",
+    "eyes.images": "0.0.17"
+  }
+}

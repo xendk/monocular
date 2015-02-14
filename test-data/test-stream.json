@@ -1,0 +1,4 @@
+{"cmd":"init","apiKey":"e9GAkZ30biPxyDYv1OflTyklqIh4LpFkLf101tydzMiYQ110","os":"SomeOS","browser":"SomeBrowser"}
+{"cmd":"open","appName":"MyApp","testName":"FirstTest5"}
+{"cmd":"image","file":"testfile.png","tag":"FirstTag"}
+{"cmd":"end"}
