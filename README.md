@@ -13,14 +13,15 @@ images as soon as possible.
 Usage
 -----
 
-    Usage: node monocular.js [file] [options]
+```
+Usage: node monocular.js [file] [options]
 
-    file     File to read
+file     File to read
 
-    Options:
-       -d, --delete     Delete images after processing
-       -n, --simulate   Simulate submission to Applitools
-
+Options:
+   -d, --delete     Delete images after processing
+   -n, --simulate   Simulate submission to Applitools
+```
 
 JSON data
 ---------
@@ -29,24 +30,24 @@ Each object should contain a command key that defines the command.
 
 Commands:
 
-'init':
+* 'init':
     Set basic parameters. Expects:
-        'apiKey': Your Applitools Eyes API key.
-        'os': The OS running the test.
-        'browser': The browser tests are being run on (or "hosting app").
+    * 'apiKey': Your Applitools Eyes API key.
+    * 'os': The OS running the test.
+    * 'browser': The browser tests are being run on (or "hosting app").
 
-'open':
+* 'open':
     Opens a test session. Expects:
-        'appName': Name of the application.
-        'testName': Name of the test.
+    * 'appName': Name of the application.
+    * 'testName': Name of the test.
 
-'image':
+* 'image':
     Submit an image. Expects:
-        'file': PNG file to read. Will be deleted if the -d switch is
+    * 'file': PNG file to read. Will be deleted if the -d switch is
             provided.
-        'tag': Image tag.
+    * 'tag': Image tag.
 
-'end':
+* 'end':
     Ends the session, no arguments expected.
         
 
