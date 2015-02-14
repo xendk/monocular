@@ -30,24 +30,24 @@ Each object should contain a command key that defines the command.
 
 Commands:
 
-* 'init':
+* `init`:
     Set basic parameters. Expects:
-    * 'apiKey': Your Applitools Eyes API key.
-    * 'os': The OS running the test.
-    * 'browser': The browser tests are being run on (or "hosting app").
+    * `apiKey`: Your Applitools Eyes API key.
+    * `os`: The OS running the test.
+    * `browser`: The browser tests are being run on (or "hosting app").
 
-* 'open':
+* `open`:
     Opens a test session. Expects:
-    * 'appName': Name of the application.
-    * 'testName': Name of the test.
+    * `appName`: Name of the application.
+    * `testName`: Name of the test.
 
-* 'image':
+* `image`:
     Submit an image. Expects:
-    * 'file': PNG file to read. Will be deleted if the -d switch is
+    * `file`: PNG file to read. Will be deleted if the -d switch is
             provided.
-    * 'tag': Image tag.
+    * `tag`: Image tag.
 
-* 'end':
+* `end`:
     Ends the session, no arguments expected.
         
 
@@ -57,11 +57,11 @@ Output and return code
 On successful submission, Monocular prints the result of the test to
 STDOUT like this:
 
-Result: OK https://eyes.applitools.com/app/sessions/251978348342540
+`Result: OK https://eyes.applitools.com/app/sessions/251978348342540`
 
 or:
 
-Result: FAIL https://eyes.applitools.com/app/sessions/251978347866624
+`Result: FAIL https://eyes.applitools.com/app/sessions/251978347866624`
 
 The URL is the URL of the test session for inspection at Applitools
 site. The exit code of Monocular is 0 for passing tests and 20 for
