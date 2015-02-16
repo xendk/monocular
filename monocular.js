@@ -82,7 +82,12 @@ var handleMessage = function(data) {
         return eyes.abortIfNotClosed();
     })
     .then(function (results) {
-      console.log('Result: ' + (results.isPassed ? 'OK' : 'FAIL') + ' ' + results.url);
+      var status = (results.isPassed ? 'OK' : 'FAIL');
+      if (!results.isPassed && results.isNew) {
+        status = 'NEW';
+      }
+
+      console.log('Result: ' + status + ' ' + results.url);
       if (!results.isPassed) {
         process.exit(20);
       }

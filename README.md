@@ -57,13 +57,13 @@ Output and return code
 On successful submission, Monocular prints the result of the test to
 STDOUT like this:
 
-`Result: OK https://eyes.applitools.com/app/sessions/251978348342540`
+`Result: NEW https://eyes.applitools.com/app/sessions/251978230806379`
 
-or:
+`Result: OK https://eyes.applitools.com/app/sessions/251978348342540`
 
 `Result: FAIL https://eyes.applitools.com/app/sessions/251978347866624`
 
 The URL is the URL of the test session for inspection at Applitools
 site. The exit code of Monocular is 0 for passing tests and 20 for
-failing tests (to not collide with internal nodejs codes). All other
-exit codes denote an error.
+failing and new tests (to not collide with internal nodejs codes). All
+other exit codes denote an error.
