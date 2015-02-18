@@ -3,9 +3,10 @@ Monocular
 =========
 
 Monocular is a simple command line interface to submit test images to
-Applitools Eyes. It allows for submitting images captured in any test
-environment, as long as the evironment is able to start a process and
-feed it Line Delimited JSON over STDIN or a file.
+[Applitools Eyes](https://applitools.com/). It allows for submitting
+images captured in any test environment, as long as the evironment is
+able to start a process and feed it Line Delimited JSON over STDIN or
+a file.
 
 Using STDIN is preferred, as it allows Monocular to start uploading
 images as soon as possible.
