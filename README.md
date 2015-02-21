@@ -27,7 +27,7 @@ Options:
 JSON data
 ---------
 
-Each object should contain a command key that defines the command.
+Each object should contain a `cmd` key that defines the command.
 
 Commands:
 
@@ -50,7 +50,7 @@ Commands:
 
 * `end`:
     Ends the session, no arguments expected.
-        
+
 
 Output and return code
 ----------------------
