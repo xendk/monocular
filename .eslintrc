@@ -1,0 +1,17 @@
+{
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "Drupal": true,
+    "jQuery": true
+  },
+  "rules": {
+    "eqeqeq": [2, "smart"],
+    "guard-for-in": 2,
+    "no-undef": 2,
+    "strict": 2,
+    "quotes": [2, "single", "avoid-escape"],
+    "no-new": 0,
+  }
+}
