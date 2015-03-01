@@ -1,5 +1,5 @@
 
-var split2 = require('split');
+var split = require('split');
 var fs = require('fs');
 var Eyes = require('eyes.images').Eyes;
 
@@ -74,7 +74,7 @@ var handleMessage = function(data) {
       });
     }
     break;
-    
+
   case 'end':
     eyesPromise.then(function () {
       return eyes.close(false);
@@ -97,7 +97,7 @@ var handleMessage = function(data) {
   }
 };
 
-input.pipe(split2(JSON.parse))
+input.pipe(split(JSON.parse))
   .on('data', function (obj) {
     //each chunk now is a a js object
     try {
