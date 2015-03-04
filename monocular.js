@@ -82,6 +82,9 @@ var handleMessage = function(data) {
         return eyes.abortIfNotClosed();
     })
     .then(function (results) {
+      if (!results || typeof results.isPassed === 'undefined') {
+        process.exit(1);
+      }
       var status = (results.isPassed ? 'OK' : 'FAIL');
       if (!results.isPassed && results.isNew) {
         status = 'NEW';
