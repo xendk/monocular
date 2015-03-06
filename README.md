@@ -41,6 +41,8 @@ Commands:
     Opens a test session. Expects:
     * `appName`: Name of the application.
     * `testName`: Name of the test.
+    * `width`: Width of the browser window..
+    * `height`: Height of the browser window..
 
 * `image`:
     Submit an image. Expects:

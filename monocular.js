@@ -57,8 +57,9 @@ var handleMessage = function(data) {
   case 'open':
     var appName = data.appName || '';
     var testName = data.testName || '';
-    // We're not implementing imageSize.
-    eyesPromise = eyes.open(appName, testName, {width: 800, height: 600});
+    var width = data.width || 640;
+    var height = data.height || 400;
+    eyesPromise = eyes.open(appName, testName, {width: width, height: height});
     break;
 
   case 'image':
