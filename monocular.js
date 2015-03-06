@@ -65,7 +65,13 @@ var handleMessage = function(data) {
     var file = data.file || '';
     var tag = data.tag || '';
     eyesPromise = eyesPromise.then(function () {
-      var imageData = fs.readFileSync(file);
+      try {
+        var imageData = fs.readFileSync(file);
+      }
+      catch (e) {
+        console.log("Error reading " + file);
+        throw e;
+      }
       return eyes.checkImage(imageData, tag);
     });
     if (opts.delete) {
@@ -79,22 +85,23 @@ var handleMessage = function(data) {
     eyesPromise.then(function () {
       return eyes.close(false);
     },function () {
-        return eyes.abortIfNotClosed();
+      return eyes.abortIfNotClosed();
     })
-    .then(function (results) {
-      if (!results || typeof results.isPassed === 'undefined') {
-        process.exit(1);
-      }
-      var status = (results.isPassed ? 'OK' : 'FAIL');
-      if (!results.isPassed && results.isNew) {
-        status = 'NEW';
-      }
+      .then(function (results) {
+        if (!results || typeof results.isPassed === 'undefined') {
+          console.log("Aborted.");
+          process.exit(1);
+        }
+        var status = (results.isPassed ? 'OK' : 'FAIL');
+        if (!results.isPassed && results.isNew) {
+          status = 'NEW';
+        }
 
-      console.log('Result: ' + status + ' ' + results.url);
-      if (!results.isPassed) {
-        process.exit(20);
-      }
-    })
+        console.log('Result: ' + status + ' ' + results.url);
+        if (!results.isPassed) {
+          process.exit(20);
+        }
+      })
       .catch(function (err) {console.log('Error: ' + err);});
     break;
   }
